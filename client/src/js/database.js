@@ -44,7 +44,7 @@ export const getDb = async () => {
     const tx = jateDb.transaction('jate', 'readonly');          // create new transaction with db and priviliges(just read)
     const store = tx.objectStore('jate');
 
-    // use .getAll() to get all data in database
+    // use .get() to get all data in database
     const request = store.get(1);
 
     // get request confirmation
