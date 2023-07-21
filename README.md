@@ -5,7 +5,7 @@
 Just Another Text Editor Racc 🦝 is a text editor that you can install for online or offline usage! The service worker allows you to use it offline, meanwhile the notes you take are stored in an IndexedDB(and local storage), so you can access them even if you don’t have internet connection!  
 
 ## Deployment
-Heroku: [JATEracc](https://jate-racc-ac7dc3f879c0.herokuapp.com/)
+Heroku: [JATEracc](https://jate-racc-ac7dc3f879c0.herokuapp.com/)  
 GitHub repo: [JATE-Racc-noter](https://github.com/jaychan0125/J.A.T.E-Racc-noter)
 
 ## Table of Contents 
