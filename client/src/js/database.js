@@ -30,6 +30,7 @@ export const putDb = async (content) => {
     // get request confirmation
     const result = await request;
     console.log('🦝🎉 - Database successfully updated!', result);
+    return result;
 
   } catch {
     console.error('putDb not implemented')
@@ -39,22 +40,17 @@ export const putDb = async (content) => {
 // TODO: Add logic for a method that gets all the content from the database  GET
 export const getDb = async () => {
   try {
-    // connect to db and version
     const jateDb = await openDB('jate', 1);
-
-    // create new transaction with db and priviliges(just read)
-    const tx = jateDb.transaction('jate', 'readonly');
-
-    // open up the object store.
+    const tx = jateDb.transaction('jate', 'readonly');          // create new transaction with db and priviliges(just read)
     const store = tx.objectStore('jate');
 
     // use .getAll() to get all data in database
-    const request = store.getAll();
+    const request = store.get(1);
 
     // get request confirmation
     const result = await request;
-    console.log('result,value', result);
-    return result;
+    console.log('result value', result);
+    return result?.value;
     
   } catch {
     console.error('getDb not implemented')
