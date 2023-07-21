@@ -15,13 +15,11 @@ const initdb = async () =>
 // TODO: Add logic to a method that accepts some content and adds it to the database  POST
 export const putDb = async (content) => {
   try {
-    console.log('Update the database');
-
     // connect to db and version
-    const contactDb = await openDB('jate', 1);
+    const jateDb = await openDB('jate', 1);
 
     // create new transaction with db and priviliges(need to update)
-    const tx = contactDb.transaction('jate', 'readwrite');
+    const tx = jateDb.transaction('jate', 'readwrite');
 
     // open up the object store.
     const store = tx.objectStore('jate');
@@ -41,13 +39,11 @@ export const putDb = async (content) => {
 // TODO: Add logic for a method that gets all the content from the database  GET
 export const getDb = async () => {
   try {
-    console.log('GET from the database');
-
     // connect to db and version
-    const contactDb = await openDB('jate', 1);
+    const jateDb = await openDB('jate', 1);
 
     // create new transaction with db and priviliges(just read)
-    const tx = contactDb.transaction('jate', 'readonly');
+    const tx = jateDb.transaction('jate', 'readonly');
 
     // open up the object store.
     const store = tx.objectStore('jate');
